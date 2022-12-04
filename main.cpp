@@ -1,7 +1,14 @@
 double my_pow(double num, unsigned int pow) {
-	double res = 1;
-	for (unsigned int i = 0;i < pow;i++) {
-		res *= num;
-	}
-	return res;
+	double result = 1;
+    while (pow) {
+        if (pow % 2 == 0) {
+            pow /= 2;
+            num *= num;
+        }
+        else {
+            pow--;
+            result *= num;
+        }
+    }
+    return result;
 }
